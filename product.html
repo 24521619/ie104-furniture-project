@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akio — Sản phẩm</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="product">
+<div id="site-header" data-page="furniture"></div>
+
+<main id="pd" class="is-loading">
+<div class="w">
+<div class="pd-msg" id="pd-msg"></div>
+<nav class="bc" aria-label="Đường dẫn"><a href="index.html">Trang chủ</a><span>/</span><a href="products.html">Sản phẩm</a><span>/</span><a id="bc-cat" href="products.html">Ghế</a><span>/</span><b id="bc-name"></b></nav>
+
+<section class="prod">
+<div class="gal">
+  <div class="big"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="" decoding="async" class="chair" id="chair" fetchpriority="high"><span class="pill" id="pill"></span><span class="cnt" id="cnt">01 / 03</span></div>
+  <div class="th" id="th"></div>
+  <div class="cap"><h2>Thêm chút sắc màu. Thêm nhiều êm ái.</h2><p>Một góc nhà ấm cúng bắt đầu từ món đồ bạn yêu thích.<br>Chất liệu tốt, thiết kế chân thật và không gian để thư giãn.</p></div>
+</div>
+<div>
+  <div class="ey" id="ey"></div>
+  <h1 id="name"></h1>
+  <p class="sub" id="tagline"></p>
+  <div class="rate"><span class="s" aria-hidden="true">★★★★★</span><span id="rate"></span></div>
+  <div class="price"><b id="tot"></b><s id="old"></s><span class="save" id="save"></span></div>
+  <p class="desc" id="desc"></p>
+  <div class="opt">
+    <div id="color-row"><div class="lb">Màu sắc <span id="cn"></span></div>
+    <div class="sw" id="sw"></div></div>
+    <div id="finish-row"><div class="lb">Hoàn thiện</div><div class="chip" id="finish"></div></div>
+    <div class="ql">Số lượng</div>
+    <div class="buy"><div class="qty"><button type="button" id="mn" aria-label="Giảm số lượng">−</button><span id="q" aria-live="polite">1</span><button type="button" id="pl" aria-label="Tăng số lượng">+</button></div><button type="button" class="add" id="add">Thêm vào giỏ &nbsp;—&nbsp; <span id="bt"></span></button></div>
+    <div class="stk">Còn hàng · Sẵn sàng giao đến nhà bạn</div>
+    <div class="trust"><div>Miễn phí vận chuyển<span>Cho mọi đơn hàng</span></div><div>Đổi trả 30 ngày<span>Yên tâm lựa chọn</span></div><div>Thanh toán an toàn<span>Mua sắm tin cậy</span></div></div>
+  </div>
+</div>
+</section>
+
+<div class="tabs" id="tabs" role="tablist"><button type="button" class="on" data-t="0">Tổng quan</button><button type="button" data-t="1">Chi tiết &amp; bảo quản</button><button type="button" data-t="2" id="tab-rev">Đánh giá</button></div>
+<section class="pn on"><div><h3>Thiết kế để trở thành<br>món đồ bạn yêu thích.</h3><p id="ov-text"></p></div><div class="card"><h4>Chỉn chu trong từng chi tiết</h4><div id="specs"></div></div></section>
+<section class="pn"><div><h3>Dễ yêu,<br>dễ bảo quản.</h3><p>Lau bằng khăn mềm và khô, xử lý ngay khi bị đổ nước, tránh để dưới nắng gắt trực tiếp để màu sắc bền lâu.</p></div><div class="card"><h4>Hướng dẫn bảo quản</h4><div class="row"><b>Vệ sinh</b><span>Lau vết bẩn bằng khăn mềm</span></div><div class="row"><b>Gỗ &amp; kim loại</b><span>Lau bằng khăn khô</span></div><div class="row"><b>Ánh nắng</b><span>Tránh nắng gắt trực tiếp</span></div></div></section>
+<section class="pn"><div><h3 id="rev-h"></h3><p id="rev-p"></p></div><div class="card"><h4 id="rev-score"></h4><div class="row"><b>Độ êm ái</b><span>Rất cao</span></div><div class="row"><b>Giá trị</b><span>Rất đáng tiền</span></div><div class="row"><b>Giao hàng</b><span>Đúng hẹn</span></div></div></section>
+
+<section class="rel">
+  <div class="rh"><div><div class="ey">THÊM CHÚT CẢM HỨNG</div><h2>Hãy cứ tự nhiên như ở nhà.</h2></div><a href="products.html">Xem tất cả sản phẩm &nbsp;→</a></div>
+  <div class="rg" id="rel"></div>
+</section>
+</div>
+</main>
+
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akio — Sản phẩm</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/shop.css">
+</head>
+<body data-page="products">
+<div id="site-header" data-page="furniture"></div>
+
+<main class="w" style="padding-top:48px">
+<section class="ps" id="top">
+  <div class="ph2"><div><span class="tag">Danh mục sản phẩm</span><h2>Tất cả nội thất</h2><p class="count" id="count" aria-live="polite"></p></div></div>
+
+  <div class="toolbar">
+    <form class="search" id="search" role="search">
+      <label for="q" class="vh">Tìm sản phẩm</label>
+      <span aria-hidden="true">⌕</span><input id="q" type="search" placeholder="Tìm theo tên hoặc mô tả, vd. sofa, gỗ sồi…" autocomplete="off">
+    </form>
+    <label class="price-sel"><span>Khoảng giá</span>
+      <select id="price">
+        <option value="">Tất cả mức giá</option>
+        <option value="lt2">Dưới 2 triệu</option>
+        <option value="2-5">2 – 5 triệu</option>
+        <option value="5-10">5 – 10 triệu</option>
+        <option value="gt10">Trên 10 triệu</option>
+      </select>
+    </label>
+  </div>
+  <div class="tabs" id="tabs"><button type="button" class="on" data-f="all">Tất cả</button><button type="button" data-f="chair">Ghế</button><button type="button" data-f="sofa">Sofa</button><button type="button" data-f="table">Bàn</button><button type="button" data-f="storage">Tủ &amp; kệ</button></div>
+
+  <div class="grid" id="grid"></div>
+  <nav class="pager" id="pager" aria-label="Phân trang"></nav>
+</section>
+</main>
+
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/products.js"></script>
+</body>
+</html>

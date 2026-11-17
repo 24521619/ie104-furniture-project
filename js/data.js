@@ -1,0 +1,113 @@
+// Danh sách sản phẩm — mọi sản phẩm trên web đều lấy từ đây.
+// Mở một sản phẩm: product.html#<id>, mở một danh mục: products.html#<cat>.
+const CATEGORIES = { chair: 'Ghế', sofa: 'Sofa', table: 'Bàn', storage: 'Tủ & kệ' };
+
+const PRODUCTS = [
+  {
+    id: 'lounge-chair', name: 'Ghế thư giãn Lounge', cat: 'chair', price: 2290000, old: 2590000,
+    img: 'images/yellow-chair.jpg', alt: 'Ghế thư giãn màu vàng mù tạt trong phòng khách đầy nắng',
+    collection: 'Bộ sưu tập Thường Ngày', tagline: 'Êm ái như chính ngôi nhà của bạn.',
+    pill: 'Dành cho những phút thong thả', rating: 4.8, reviews: 32,
+    desc: 'Chiếc ghế nệm êm với lưng tựa chắc chắn và chân gỗ ấm áp. Góc thư giãn yêu thích mới của bạn.',
+    colors: [['Vàng mù tạt', '#d6aa2b'], ['Xanh rêu nhạt', '#8c9984'], ['Be đá', '#c6bdb0']],
+    finish: 'Gỗ tự nhiên',
+    specs: { 'Chất liệu bọc': 'Vải dệt có vân', 'Chân ghế': 'Gỗ tự nhiên', 'Kích thước': 'R 72 × S 78 × C 84 cm', 'Độ êm': 'Đệm ngồi và lưng tựa' }
+  },
+  {
+    id: 'cloud-chair', name: 'Ghế bành Cloud', cat: 'chair', price: 2990000,
+    img: 'images/fabric-chair.jpg', alt: 'Ghế bành bọc vải màu kem',
+    collection: 'Ghế êm', tagline: 'Chiếc ghế mềm mại cho những góc yên tĩnh.',
+    pill: 'Mềm mại khi chạm', rating: 4.7, reviews: 18,
+    desc: 'Đường cong mềm mại cùng lớp vải màu kem êm ái giúp chiếc ghế hợp với phòng ngủ, góc đọc sách hay phòng khách.',
+    colors: [['Kem', '#eee6d8'], ['Yến mạch', '#d8c8ae'], ['Xám than', '#4a4a48']],
+    finish: 'Gỗ sồi sẫm',
+    specs: { 'Chất liệu bọc': 'Vải bouclé', 'Chân ghế': 'Gỗ sồi nguyên khối', 'Kích thước': 'R 70 × S 74 × C 80 cm', 'Độ êm': 'Đệm mềm vừa' }
+  },
+  {
+    id: 'oak-armchair', name: 'Ghế bành chân gỗ sồi', cat: 'chair', price: 3390000, old: 3890000,
+    img: 'images/lounge-chair.jpg', alt: 'Ghế bọc vải xám với chân gỗ',
+    collection: 'Bộ sưu tập Thường Ngày', tagline: 'Đường nét gọn gàng, gỗ sồi chắc chắn, êm ái cả ngày.',
+    pill: 'Bền bỉ theo năm tháng', rating: 4.6, reviews: 21,
+    desc: 'Ghế bành dáng gọn trên chân gỗ sồi nguyên khối, mặt ngồi sâu và lưng tựa nâng đỡ bạn suốt những buổi tối dài.',
+    colors: [['Xám đá', '#a9a8a3'], ['Màu cát', '#cfc2a8']],
+    finish: 'Gỗ sồi tự nhiên',
+    specs: { 'Chất liệu bọc': 'Vải polyester dệt', 'Chân ghế': 'Gỗ sồi nguyên khối', 'Kích thước': 'R 68 × S 72 × C 82 cm', 'Độ êm': 'Mặt ngồi chắc, nâng đỡ tốt' }
+  },
+  {
+    id: 'everyday-sofa', name: 'Sofa Thường Ngày', cat: 'sofa', price: 7190000, old: 8290000,
+    img: 'images/sofa.jpg', alt: 'Ghế sofa bọc vải màu xanh lá',
+    collection: 'Phòng khách', tagline: 'Đủ chỗ cho cả gia đình.',
+    pill: 'Gia đình yêu thích', rating: 4.9, reviews: 54,
+    desc: 'Sofa 3 chỗ với đệm dày và lớp vải dệt bền chắc, dành cho những tối xem phim và ngày Chủ nhật thảnh thơi.',
+    colors: [['Xanh rừng', '#4f6b4a'], ['Xanh navy', '#2f3d55'], ['Vải lanh', '#d9d2c3']],
+    finish: 'Gỗ hồ đào',
+    specs: { 'Chất liệu bọc': 'Vải dệt bền chắc', 'Số chỗ ngồi': '3 người', 'Kích thước': 'R 210 × S 92 × C 84 cm', 'Đệm': 'Áo đệm tháo rời, giặt được' }
+  },
+  {
+    id: 'cozy-sofa-set', name: 'Bộ sofa Ấm Cúng', cat: 'sofa', price: 13490000, old: 14990000,
+    img: 'images/living-room.jpg', alt: 'Bộ sofa êm ái trong phòng khách sáng sủa',
+    collection: 'Phòng khách', tagline: 'Trọn bộ phòng khách chỉ trong một đơn hàng.',
+    pill: 'Trọn bộ', rating: 4.7, reviews: 26,
+    desc: 'Bộ sofa và ghế bành đồng điệu với tông màu trung tính ấm áp, làm điểm nhấn cho phòng khách sáng sủa và thân thiện.',
+    colors: [['Be ấm', '#cdb79a'], ['Xám', '#9b9b98']],
+    finish: 'Gỗ tự nhiên',
+    specs: { 'Bao gồm': 'Sofa + ghế bành', 'Chất liệu bọc': 'Vải mềm mịn', 'Kích thước': 'Sofa dài 200 cm', 'Đệm': 'Ruột pha lông vũ' }
+  },
+  {
+    id: 'dining-table', name: 'Bộ bàn ăn 6 ghế', cat: 'table', price: 10290000, old: 11690000,
+    img: 'images/dining-table.jpg', alt: 'Bàn ăn cùng các ghế bọc nệm',
+    collection: 'Phòng ăn', tagline: 'Quây quần, sẻ chia và nán lại lâu hơn.',
+    pill: 'Đủ chỗ cho 6 người', rating: 4.8, reviews: 37,
+    desc: 'Bàn ăn gỗ nguyên khối kèm 6 ghế bọc nệm — đủ chắc chắn cho bữa cơm hằng ngày và đủ sang trọng để đãi khách.',
+    colors: [['Gỗ sồi', '#b98b5a'], ['Gỗ hồ đào', '#6b4a32']],
+    finish: 'Sơn mờ',
+    specs: { 'Chất liệu': 'Mặt gỗ sồi nguyên khối', 'Số chỗ ngồi': '6 người', 'Kích thước': 'D 180 × R 90 × C 75 cm', 'Bao gồm': 'Bàn + 6 ghế' }
+  },
+  {
+    id: 'side-table', name: 'Bàn tròn đầu giường', cat: 'table', price: 1590000,
+    img: 'images/side-table.jpg', alt: 'Bàn tròn nhỏ đặt cạnh giường',
+    collection: 'Đồ nội thất nhỏ', tagline: 'Chiếc bàn nhỏ làm được mọi việc.',
+    pill: 'Nhỏ mà có võ', rating: 4.5, reviews: 15,
+    desc: 'Bàn tròn nhỏ gọn để cà phê, sách và chậu cây. Vừa vặn bên giường, cạnh sofa hay ghế đọc sách.',
+    colors: [['Trắng', '#efefec'], ['Đen', '#2b2b2b']],
+    finish: 'Thép sơn tĩnh điện',
+    specs: { 'Mặt bàn': 'MDF phủ sơn', 'Chân đế': 'Thép', 'Kích thước': 'Ø 45 × C 55 cm', 'Trọng lượng': '4,5 kg' }
+  },
+  {
+    id: 'office-desk', name: 'Bàn làm việc Studio', cat: 'table', price: 4590000, old: 5090000,
+    img: 'images/office-desk.jpg', alt: 'Bàn làm việc đặt cạnh cửa sổ',
+    collection: 'Góc làm việc', tagline: 'Tập trung bên khung cửa sổ.',
+    pill: 'Làm việc tại nhà', rating: 4.6, reviews: 29,
+    desc: 'Bàn làm việc tối giản với mặt bàn rộng cho laptop, màn hình và sổ ghi chép, mép sau tiện đi dây điện.',
+    colors: [['Trắng', '#f2f2f0'], ['Gỗ sồi sáng', '#d2b48c']],
+    finish: 'Chân thép',
+    specs: { 'Mặt bàn': 'Ván phủ laminate', 'Chân bàn': 'Thép', 'Kích thước': 'R 120 × S 60 × C 75 cm', 'Tải trọng tối đa': '40 kg' }
+  },
+  {
+    id: 'oak-cabinet', name: 'Tủ gỗ sồi', cat: 'storage', price: 2090000, old: 2390000,
+    img: 'images/cabinet.jpg', alt: 'Tủ lưu trữ bằng gỗ',
+    collection: 'Tủ & kệ', tagline: 'Mọi thứ đều có chỗ của nó.',
+    pill: 'Gỗ tự nhiên', rating: 4.7, reviews: 19,
+    desc: 'Tủ gỗ cao với các ngăn kệ điều chỉnh được, phù hợp để sách, khăn vải hay đồ dùng nhà bếp.',
+    colors: [['Gỗ sồi', '#c8a67a'], ['Trắng', '#efefec']],
+    finish: 'Gỗ sồi veneer',
+    specs: { 'Chất liệu': 'Gỗ sồi veneer', 'Số ngăn': '4 ngăn điều chỉnh được', 'Kích thước': 'R 80 × S 40 × C 180 cm', 'Lắp ráp': 'Cần lắp ráp' }
+  }
+];
+
+// Giá hiển thị kiểu Việt Nam: 2.290.000₫
+const money = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + '₫';
+const findProduct = id => PRODUCTS.find(p => p.id === id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+// Thẻ sản phẩm dùng ở trang chủ và trang danh sách sản phẩm
+function cardHTML(p) {
+  return `<article class="pc" data-c="${p.cat}">
+    <a class="pc-link" href="product.html#${p.id}">
+      <div class="im"><img src="${p.img}" alt="${esc(p.alt)}" loading="lazy" decoding="async"></div>
+      <h4>${esc(p.name)}</h4>
+    </a>
+    <div class="pr"><span>${p.old ? `<s>${money(p.old)}</s>` : ''}<b>${money(p.price)}</b></span>
+      <button class="cb" type="button" data-add="${p.id}" aria-label="Thêm ${esc(p.name)} vào giỏ hàng">🛒</button></div>
+  </article>`;
+}

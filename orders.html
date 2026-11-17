@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akio — Đơn hàng của tôi</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/shop.css">
+</head>
+<body data-page="orders">
+<div id="site-header" data-page="orders"></div>
+
+<main class="w">
+  <div class="co-head">
+    <span class="tag">Tài khoản</span>
+    <h1>Đơn hàng của tôi</h1>
+    <p id="ol-sub">Xem lại các đơn bạn đã đặt.</p>
+  </div>
+  <div id="ol-note" class="ol-note" hidden></div>
+  <div id="ol" class="olist" aria-live="polite"><p class="ol-empty">Đang tải…</p></div>
+</main>
+
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/orders.js"></script>
+</body>
+</html>

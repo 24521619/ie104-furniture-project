@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akio — Thanh toán</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/shop.css">
+</head>
+<body data-page="checkout">
+<div id="site-header" data-page=""></div>
+
+<main class="w">
+  <div class="co-head">
+    <div class="steps"><span>Giỏ hàng</span><span>›</span><b>Thông tin & thanh toán</b><span>›</span><span>Hoàn tất</span></div>
+    <h1>Thanh toán</h1>
+    <p>Điền thông tin nhận hàng, chúng tôi sẽ gọi xác nhận trước khi giao.</p>
+  </div>
+
+  <div id="co-empty" class="co-empty" hidden>
+    <h2>Giỏ hàng của bạn đang trống</h2>
+    <p>Hãy chọn vài món nội thất yêu thích trước khi thanh toán nhé.</p>
+    <p><a class="btn-main" href="products.html" style="display:inline-grid;place-items:center;width:auto;padding:0 28px">Xem sản phẩm</a></p>
+  </div>
+
+  <form class="co" id="co" novalidate hidden>
+    <div>
+      <p class="form-err" id="co-err" hidden role="alert"></p>
+
+      <section class="co-card">
+        <h2><i>1</i>Thông tin người nhận</h2>
+        <div class="fld"><label for="c-name">Họ và tên <em>*</em></label><input id="c-name" name="name" autocomplete="name" placeholder="Nguyễn Văn A"><span class="msg" id="c-name-msg"></span></div>
+        <div class="row2">
+          <div class="fld"><label for="c-phone">Số điện thoại <em>*</em></label><input id="c-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0912 345 678"><span class="msg" id="c-phone-msg"></span></div>
+          <div class="fld"><label for="c-email">Email <small>(không bắt buộc)</small></label><input id="c-email" name="email" type="email" autocomplete="email" placeholder="ban@example.com"><span class="msg" id="c-email-msg"></span></div>
+        </div>
+      </section>
+
+      <section class="co-card">
+        <h2><i>2</i>Địa chỉ giao hàng</h2>
+        <div class="fld"><label for="c-city">Tỉnh / Thành phố <em>*</em></label>
+          <select id="c-city" name="city" autocomplete="address-level1"><option value="">— Chọn tỉnh / thành phố —</option></select><span class="msg" id="c-city-msg"></span></div>
+        <div class="fld"><label for="c-address">Địa chỉ cụ thể <em>*</em></label><input id="c-address" name="address" autocomplete="street-address" placeholder="Số nhà, tên đường, phường / xã"><span class="msg" id="c-address-msg"></span></div>
+        <div class="fld"><label for="c-note">Ghi chú <small>(không bắt buộc)</small></label><textarea id="c-note" name="note" maxlength="500" placeholder="Ví dụ: giao giờ hành chính, gọi trước khi đến…"></textarea><span class="msg" id="c-note-msg"></span></div>
+      </section>
+
+      <section class="co-card">
+        <h2><i>3</i>Phương thức thanh toán</h2>
+        <div class="pay" role="radiogroup" aria-labelledby="pay-l"><span id="pay-l" class="vh">Phương thức thanh toán</span>
+          <label><input type="radio" name="payment" value="cod" checked><span><b>Thanh toán khi nhận hàng (COD)</b><small>Trả tiền mặt hoặc chuyển khoản cho nhân viên giao hàng.</small></span></label>
+          <label><input type="radio" name="payment" value="bank"><span><b>Chuyển khoản ngân hàng</b><small>Thông tin chuyển khoản sẽ hiện sau khi đặt hàng.</small></span></label>
+        </div>
+        <span class="msg" id="c-payment-msg"></span>
+      </section>
+    </div>
+
+    <aside class="sum" aria-labelledby="sum-h">
+      <h2 id="sum-h">Đơn hàng của bạn</h2>
+      <ul id="sum-list"></ul>
+      <div class="ln"><span>Tạm tính</span><span id="sum-sub"></span></div>
+      <div class="ln"><span>Phí vận chuyển</span><span id="sum-ship" class="free">Miễn phí</span></div>
+      <div class="tot"><span>Tổng cộng</span><span id="sum-tot"></span></div>
+      <button type="submit" class="btn-main" id="co-btn">Đặt hàng</button>
+      <a class="edit" href="#" id="co-edit">Chỉnh sửa giỏ hàng</a>
+    </aside>
+  </form>
+</main>
+
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>
